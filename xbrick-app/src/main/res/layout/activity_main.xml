@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="activity"
+            type="cn.zzstc.lzm.ui.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+
+        <ImageView
+            android:id="@+id/ivIndexLogo"
+            android:src="@mipmap/ic_x_lab"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="120dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvIndexTitle"
+            android:gravity="center"
+            android:textSize="80sp"
+            android:text="XLab"
+            app:layout_constraintTop_toBottomOf="@+id/ivIndexLogo"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.qmuiteam.qmui.layout.QMUIButton
+            android:onClick="@{activity::onClick}"
+            android:id="@+id/btnIndexOpenLogin"
+            android:text="打开登陆页"
+            android:textColor="@color/c11"
+            android:background="@drawable/btn_primary_bg"
+            app:layout_constraintTop_toBottomOf="@+id/tvIndexTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" />
+
+        <com.qmuiteam.qmui.layout.QMUIButton
+            android:id="@+id/btnIndexOpenLab"
+            android:onClick="@{activity::onClick}"
+            android:layout_marginTop="10dp"
+            android:text="打开实验室"
+            android:textColor="@color/c11"
+            android:background="@drawable/btn_primary_bg"
+            app:layout_constraintTop_toBottomOf="@+id/btnIndexOpenLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="zzstc"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

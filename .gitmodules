@@ -1,0 +1,6 @@
+[submodule "xbrick-base"]
+	path = xbrick-base
+	url = git@github.com:zz-xlab/xbrick-base.git
+[submodule "xbrick-user"]
+	path = xbrick-user
+	url = git@github.com:zz-xlab/xbrick-user.git

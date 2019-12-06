@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="QMUITopBarStyle">@style/TopBar</item>
+    </style>
+
+    <style name="TopBar" parent="QMUI.TopBar">
+        <item name="qmui_topbar_title_color">@color/c11</item>
+        <item name="qmui_topbar_bg_color">@color/c1</item>
+    </style>
+
+
+
+</resources>
