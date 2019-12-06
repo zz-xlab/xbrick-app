@@ -20,24 +20,24 @@ class ServerAddressProvider : IServerAddressProvider {
         if (BuildConfig.BUILD_TYPE.equals("debug")) {
             serverList.add(
                 ServerAddress(
-                    "http://test.louzhangmen.cn:8000",
+                    "http://debug.xxx",
                     AddressType.Debug,
                     true
                 )
             )
-            serverList.add(ServerAddress("https://chuneng.louzm.com", AddressType.Production, false))
+            serverList.add(ServerAddress("https://xxx.xxx", AddressType.Production, false))
 
         } else {
             serverList.add(
                 ServerAddress(
-                    "http://test.louzhangmen.cn:8000",
+                    "http://test.xxxx",
                     AddressType.Debug,
                     false
                 )
             )
-            serverList.add(ServerAddress("https://chuneng.louzm.com", AddressType.Production, true))
+            serverList.add(ServerAddress("https://xxx.xxx", AddressType.Production, true))
         }
-        serverList.add(ServerAddress("https://chuneng.louzm.cn", AddressType.Preview, false))
+        serverList.add(ServerAddress("https://xxx.xxx", AddressType.Preview, false))
         return serverList
     }
 }
