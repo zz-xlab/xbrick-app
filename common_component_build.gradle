@@ -10,6 +10,16 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 
+def getGitHash = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -31,6 +41,8 @@ android {
 
     buildTypes {
         release {
+            buildConfigField "String", "BUILD_HASH", "\"${getGitHash()}\""
+
             buildConfigField "boolean", "IS_DEBUG", "false"
             buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
             zipAlignEnabled true     //Zipalign优化
@@ -39,6 +51,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
+            buildConfigField "String", "BUILD_HASH", "\"${getGitHash()}\""
+
             buildConfigField "boolean", "IS_DEBUG", "true"
             buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
             zipAlignEnabled true     //Zipalign优化
@@ -77,3 +91,5 @@ dependencies {
     kapt 'com.alibaba:arouter-compiler:1.2.2'
 
 }
+
+
